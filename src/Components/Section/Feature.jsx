@@ -1,3 +1,4 @@
+import FeatureCard from "./FeatureCard";
 
 
 const Feature = () => {
@@ -20,14 +21,17 @@ const Feature = () => {
     return (
         <section>
             <div>
-                <h1 className="text-2xl font-semibold px-5">Featured Destinations</h1>
+                <h1 className=" text-xl md:text-3xl font-semibold px-5 ">Featured Destinations</h1>
             </div>
             <div className="grid grid-cols-1  md:grid-cols-2  lg:grid-cols-3 gap-8 pt-10">
-                {card.map((cards,index) => {
+                {card.map((feature,index) => {
                     return(
-                        <>
-                            
-                        </>
+                        <div key={`feature-card-${index}`}>
+                            <FeatureCard
+                               img ={feature.img} 
+                               title={feature.title}
+                            />
+                        </div>
                     )
                 })}
             </div>
